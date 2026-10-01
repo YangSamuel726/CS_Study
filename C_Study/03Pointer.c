@@ -35,16 +35,11 @@ void Example03()
 
 void Example04()
 {
-    double num = 3.14;
-    int* pnum = &num; // 컴파일 에러!
-    printf("%d", *pnum); // 예측 불가능한 의미 없는 출력
+    // double num = 3.14;
+    // int* pnum = &num; // 컴파일 에러!
+    // printf("%d", *pnum); // 예측 불가능한 의미 없는 출력
 }
 
-int main(void)
-{
-    Example04();
-    return 0;
-}
 
 // [포인터 변수란?]
 // 어떤 대상을 가리키는 주소(포인터 값)를 저장하는 변수이다.
@@ -60,6 +55,7 @@ int main(void)
 
 // [표현식에서의 * : 역참조 연산자]
 // 포인터가 가리키는 메모리 공간에 접근할 때 사용하는 연산자이다.
+// 해당 변수의 값을 가지고 주소에 접근한다.
 // 이를 통해 대상의 값을 읽거나 수정할 수 있다.
 // 예: int value = *pnum;
 // 예: *pnum = 20;
@@ -68,3 +64,25 @@ int main(void)
 // [& : 주소 연산자]
 // 피연산자의 주소 값을 반환하는 연산자이다. 이때 피연산자는 상수가 아닌 변수여야 한다. 대상의 주소를 나타내는 포인터 값을 얻는다.
 // 예: pnum = &num;
+
+
+
+// [Trouble01] : (*pnum)++과 *pnum++의 차이
+void Trouble01(void)
+{
+    int num = 10;
+    int* pnum = &num;
+
+    // *pnum++; 
+    // ++연산자가 우선순위가 높기 때문에 가리키는 주소값이 증가한 다음에 해당 주소를 찾아간다.
+
+    (*pnum)++; // 먼저 주소에 해당하는 메모리 공간에 접근한 다음 ++연산 진행
+    printf("%d", num); // 11출력
+}
+
+
+int main(void)
+{
+    Trouble01();
+    return 0;
+}
