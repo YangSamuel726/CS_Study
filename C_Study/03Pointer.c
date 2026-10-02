@@ -109,6 +109,28 @@ void Example07(void)
     printf("%s\n", strArr[0]); // Simple 출력
 }
 
+// [포인터 대상의 const 선언]
+// 포인터 변수에 대해 const를 선언할 수 있는데 선언 위치에 따라서 그 의미가 달라진다.
+void ConstDeclaration()
+{
+    int num = 20;
+    
+    // const가 앞부분에 선언되면 포인터가 가리키는 변수에 저장된 값을 변경하는 것을 허용하지 않는다.
+    const int* ptr1 = &num;
+    // *ptr1 = 30; // 컴파일 에러!
+    num = 40; // 컴파일 성공
+
+    // const가 변수 앞에서 선언되면 포인터가 가리키는 대상을 변경하는 것을 허용하지 않는다.
+    int num2 = 5;
+    int* const ptr2 = &num;
+    // ptr2 = &num2; // 컴파일 에러!
+    *ptr2 = 10; // 성공
+
+    // 물론 두부분에 모두 선언도 가능하다.
+    const int* const ptr3 = &num; // 이 경우 가리키는 대상의 값도 가리키는 대상도 변경할 수 없다.
+
+}
+
 // [Trouble01] : (*pnum)++과 *pnum++의 차이
 void Trouble01(void)
 {
