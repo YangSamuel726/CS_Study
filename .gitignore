@@ -57,6 +57,9 @@ Desktop.ini
 *.gch
 *.d
 
+# C# project
+*.csproj
+
 # Build directories and CMake generated files
 [Bb]uild/
 [Dd]ebug/
