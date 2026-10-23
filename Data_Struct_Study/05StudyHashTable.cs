@@ -4,8 +4,8 @@ using System.Runtime.CompilerServices;
 
 // 작성자 : 양사무엘
 // 작성일자 : 2026-09-21
-// 공부 주제 : 
-// 목표 : 
+// 공부 주제 : HashTable
+// 목표 : HashTable 자료구조의 특징과 내부원리 이해
 
 class StudyHashTable
 {
