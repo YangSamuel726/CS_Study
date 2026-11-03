@@ -1,12 +1,16 @@
 using System;
 using Game;
 using Audio;
-using System.Runtime.InteropServices;
+
 
 // 작성자 : 양사무엘
 // 작성일자 : 2026-10-30
 // 공부 주제 : namespace 키워드
 // 목표 : namespace의 정의와 이해
+
+// > [!Note]
+// > 박상현 저자의 『이것이 C#이다』를 바탕으로 학습하고, 이해한 내용을 제 말로 정리한 글입니다.\
+// > 설명에 오류가 있을 수 있습니다. 잘못된 내용이나 보완할 점을 알려 주시면 확인 후 수정하겠습니다. :)
 
 // [namespace란?]
 // 네임스페이스는 성격이나 하는 일이 비슷한 클래스, 구조체, 인터페이스, 대리자, 열거 형식 등을 하나의 이름 아래 묶는 일을 한다.
@@ -34,9 +38,6 @@ class CS002_NameSpace
         // namespace를 사용하여 소속을 확실히 하여 해결할 수 있다.
         Game.Player player1 = new Game.Player();
         Audio.Player player2 = new Audio.Player();
-
-        string asdf = new string("asdf");
-        string hdh = "";
     }
 }
 
