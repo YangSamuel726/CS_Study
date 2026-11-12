@@ -37,3 +37,26 @@ void Audio::Play()
 }
 
 // '::'연산자를 가리켜 '범위지정 연산자'라고 하며, 네임스페이스, 클래스, 열거형, 전역범위 등 범위를 지정할 때 사용하는 연산자이다.
+
+
+// using을 통해 네임스페이스 범위지정을 생략할 수 있다.
+
+using namespace AAA::BBB;
+
+namespace AAA
+{
+    namespace BBB
+    {
+        namespace CCC
+        {
+            int num = 0;
+        }
+    }
+}
+
+void Example()
+{
+    // 이렇게도 가능하다.
+    namespace ABC = CCC;
+    ABC::num = 5;
+}
