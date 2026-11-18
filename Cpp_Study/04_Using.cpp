@@ -1,0 +1,1 @@
+using IntArray = int[5];

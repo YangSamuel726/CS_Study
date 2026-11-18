@@ -40,9 +40,11 @@ void Audio::Play()
 
 
 // using을 통해 네임스페이스 범위지정을 생략할 수 있다.
+// using으로 네임스페이스를 사용하게다고 함으로 네임스페이스가 제공하는 함수와 변수에 이름 없이 접근할 수 있게된다.
 
 using namespace AAA::BBB;
 
+// namespace는 중첩이 가능하다.
 namespace AAA
 {
     namespace BBB
@@ -50,13 +52,22 @@ namespace AAA
         namespace CCC
         {
             int num = 0;
+            int x(10);
+            void CoutSome();
+            void SomeFunc();
         }
     }
 }
 
 void Example()
 {
+    CCC::x = 10;
     // 이렇게도 가능하다.
     namespace ABC = CCC;
     ABC::num = 5;
+}
+
+void CCC::CoutSome()
+{
+    std::cout<<"Some";
 }
